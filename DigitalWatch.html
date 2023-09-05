@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0.00001">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Watch with Custom Styling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3498db; /* Blue background color */
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+           // background-image: url(https://e0.pxfuel.com/wallpapers/336/817/desktop-wallpaper-digital-watch-digital-clock.jpg);
+
+        }
+
+        .watch {
+            font-size: 2.5rem; /* Increased font size */
+            width: 500px;
+            margin: 0 auto;
+            background-color: #fff; /* White background color for the watch */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            box-shadow: 15px 15px 20px rgba(0,0,0,0.4); /* 3D effect with increased intensity */
+            border: 2px solid #3498db; /* Blue border */
+        }
+
+        .date, .time {
+            color: #333; /* Dark text color for date and time */
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: bold; /* Bold text */
+        }
+    </style>
+</head>
+<body>
+    <div class="watch">
+        <p class="date" id="date">TODAY'S DATE : Loading...</p>
+        <p class="time" id="time">Current Time : Loading...</p>
+    </div>
+
+    <script type="text/javascript">
+       // function updateClock() {
+            let dat = new Date();
+            let dt = dat.getDate();
+            let mnth = dat.getMonth() + 1;
+            let yr = dat.getFullYear();
+            let dateStr = "TODAY'S DATE : " + dt + "/" + mnth + "/" + yr;
+
+            let tm = new Date();
+            let hr = tm.getHours();
+            let mn = tm.getMinutes();
+            let sc = tm.getSeconds();
+            let ms = tm.getMilliseconds();
+            let timeStr = "Current Time : " + hr + ":" + mn + ":" + sc + ":" + ms;
+
+            document.getElementById('date').textContent = dateStr;
+            document.getElementById('time').textContent = timeStr;
+        //}
+
+        // // Update the clock every second
+        // setInterval(updateClock, 1000);
+
+        // // Initial update
+        // updateClock();
+    </script>
+</body>
+</html>
